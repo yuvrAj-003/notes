@@ -22,7 +22,9 @@ function Register(){
         <br /><br />
         
         {/* submit */}
-        <button className="auth-btn" onClick={() => createAccount(email,password).then((v) => setIsNotError(v))}>REGISTER</button>
+        <button className="auth-btn" onClick={() => createAccount(email,password).then((v) => {
+            setIsNotError(v)
+        })}>REGISTER</button>
     </div>
     );
 }

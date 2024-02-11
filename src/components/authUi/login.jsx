@@ -21,7 +21,9 @@ function Login(){
             <input type="password" placeholder="password.." onInput={(e) => setPassword(e.target.value)} style={{width: "70%"}}/>
             <br /><br />
             {/* submit */}
-            <button className="auth-btn" onClick={() => logIn(email,password).then(v => setIsNotError(v))}>LOGIN</button>
+            <button className="auth-btn" onClick={() => logIn(email,password).then(v => {
+                setIsNotError(v)
+            })}>LOGIN</button>
         </div>
 
     );
