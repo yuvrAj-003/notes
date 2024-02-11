@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    background: none;
+}
+::-webkit-scrollbar-thumb{
+    background: #FDE767;
+}
+
+hr{
+    border: none;
+    border-top: 2px solid black;
+}
+input[type=text], input[type=password]{
+    background-color: inherit;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline:none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+button{
+    background: inherit;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.7;
+}
+
+
+
+.topBar{
+    box-shadow: 0 0 2px black;
+    background-color: #FDE767;
+    box-sizing: border-box;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+/* auth page */
+
+.auth-container{
+    min-height: 100vh;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-auth > button{
+    font-size: large;
+}
+
+
+.cred-title{
+    position: absolute;
+    top: 10px;
+}
+
+.auth-btn{
+    box-shadow: 0 0 2px black;
+    font-size: medium;
+    background-color: white;
+    padding: 0.5rem;
+    width: 100px;
+}
+
+.register-container,.login-container{
+    box-shadow: 0 0 2px black;
+    position: relative;
+    background: #FDE767;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container > input,.login-container > input {
+    font-size: large;
+}
+
+
+.failed-login{
+    text-align: center;
+    box-shadow: 0 0 2px black;
+    width: 500px;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 10px;
+    background-color: #FDE767;
+
+}
+/* home  */
+
+.home-container{
+    text-align: center;
+}
+.search{
+    text-shadow: 0 0 2px black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notes{
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-flow: column;
+    position: relative;
+    padding: 0.5rem;
+    margin: 2rem;
+    height: 200px;
+    width: 300px;
+    box-shadow: 0 0 2px black;
+    background-color: #FDE767;
+    cursor: pointer;
+}
+
+.add-btn{
+    position: fixed;
+    bottom: 10px;
+    right: 20px
+}
+.del-btn{
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    font-size: 20px;
+}
+
+.read-btn{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    font-size: 20px;
+}
+
+/* notePage  */
+.note-box{
+    min-height: 89vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    outline: none;
+    resize: none;
+    border: none;
+}
+
+@keyframes load {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    animation-name: load;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    border: none;
+    border-top: 3px solid black;
+
+    
+}
+/* for mobile */
+@media screen and (max-width: 712px){
+    .register-container,.login-container{
+        width: 80%;
+    }
+}
+
