@@ -6,12 +6,13 @@ import NotePage from "./NotePage.jsx";
 import {auth} from "../fb_setup/config.js";
 import { logOut } from "../fb_setup/auth.js";
 
+import {useNavigate} from "react-router-dom";
 // crud
 import { getData , addData , deleteData} from "../fb_setup/store.js";
 
 import Loading from "./Loading.jsx";
 function Home(){
-
+    const navigate = useNavigate();
     // toggle to note pad
     const [toggle, setToggle] = useState(false);
     const [searchData,setSearchData] = useState("");
@@ -27,7 +28,8 @@ function Home(){
                 setIsAuth(true);
             }
             else{
-                window.location.href="/auth";
+                setIsAuth(false);
+                navigate("/auth");
             }
         })
     } , [])
@@ -73,7 +75,6 @@ function Home(){
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <button className="signout-btn" title="logout" onClick={() => {
                                 logOut();
-                                window.location.reload(true);
                             }}>
                                 <i className="fa-solid fa-right-from-bracket"></i>
                             </button>

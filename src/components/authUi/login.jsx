@@ -2,8 +2,10 @@ import {useState } from "react";
 import {logIn} from "../../fb_setup/auth.js"
 import "../../styles.css";
 import LoginFailed from "./loginFailed.jsx";
-function Login(){
 
+import { useNavigate } from "react-router-dom";
+function Login(){
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isNotError , setIsNotError] = useState(true);
@@ -22,7 +24,11 @@ function Login(){
             <br /><br />
             {/* submit */}
             <button className="auth-btn" onClick={() => logIn(email,password).then(v => {
-                setIsNotError(v)
+                if(v){
+                    setIsNotError(v);
+                    navigate("/");
+                }
+                
             })}>LOGIN</button>
         </div>
 

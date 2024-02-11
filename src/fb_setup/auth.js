@@ -5,7 +5,6 @@ import { createUserWithEmailAndPassword , signInWithEmailAndPassword , signOut} 
 const createAccount = async(email, password) =>{
     try{
         await createUserWithEmailAndPassword(auth , email, password);
-        window.location.href = "/";
         return true;
     }
     catch(e){
@@ -18,7 +17,6 @@ const createAccount = async(email, password) =>{
 const logIn = async(email, password) => {
     try{
         await signInWithEmailAndPassword(auth, email,password);
-        window.location.href = "/";
         return true;
     }
     catch(e){
@@ -31,7 +29,6 @@ const logIn = async(email, password) => {
 const logOut = async() => {
     try{
         await signOut(auth);
-        window.location.reload();
     }
     catch(e){
         return "error incurred";

@@ -2,8 +2,10 @@ import "../../styles.css";
 import {createAccount} from "../../fb_setup/auth.js"
 import { useState } from "react";
 import LoginFailed from "./loginFailed.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Register(){
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isNotError , setIsNotError] = useState(true);
@@ -23,7 +25,11 @@ function Register(){
         
         {/* submit */}
         <button className="auth-btn" onClick={() => createAccount(email,password).then((v) => {
-            setIsNotError(v)
+            if(v){
+                setIsNotError(v);
+                navigate("/");
+            }
+            
         })}>REGISTER</button>
     </div>
     );
